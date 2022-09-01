@@ -43,7 +43,7 @@ Notes of Applied Predictive Modeling
     > - Initialize a single sample as starting test set
     > - Calculate the dissimilarity between this initial sample and each remaining samples in the dataset
     > - Add the most dissimilar unallocated sample to the test set
-  - **Resampling**: CV
+  - **Resampling**: K Fold CV, Monte Carlo CV(Leave-*group*-out CV, could specify the size of *group*), Bootstraping(can be misleading when sample size is small)
     - fold * iter_time
     - small k (2 or 3) comes with hign variances (typically larger than other methods), if k large (10 is often enough, mostly better than LOOCV in light of computational complexity), the true value can be discovered.
     - small k (2 or 3) has the same level of bias as bootstrap
