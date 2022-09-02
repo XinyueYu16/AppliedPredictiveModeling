@@ -9,6 +9,7 @@
   - Degradate Matrix(single or rare values)
 - Adding 
   - e.g. Each predictors' distance from the class centroid
+  - According to the relationships between predictors and the response, [*Partial Dependent Plot*](https://christophm.github.io/interpretable-ml-book/pdp.html) can be utilized here
 - Binning
   - Easier access to answers in questionnaires
   - good interpretation, low predictive performance
