@@ -41,9 +41,14 @@
         - R_i^2 is represents the unadjusted coefficient of determination for regressing the ith independent variable on the remaining ones
       - not significant respective T-tests, high R^2 
     - How to correct?
-      - Delete correlated predictors
+      - Delete correlated predictors(p47) to ensure all pairwise correlations are below a certain threshold
+        - Find the highest correlation (between A and B)
+        - remove the one that has higher average correlation with other variables
+        - loop until no pairwise correlation is above threshold
       - PCA, PLS(simultaneouos dimension reduction and regression), Lasso, Ridge
       - Situations that multicollinearity doesn't matter: a. dummy variable; b. control variable(as opposed of variable of interest); c. intersection or power
+  - Drawback: a. only for linear; b. sensitive to outliers (bc they are minimizing SSE)
+
     
 
 
