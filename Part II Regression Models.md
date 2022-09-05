@@ -20,6 +20,32 @@
   - overpredict low values, underpredict high ones -- common in *tree-based* models
 
 ## C6 Linear Regression and Its Cousins
+- Meaning of Linear Regression
+  - linear parameter(linear relationship)
+  - additive
+  - generally trys to minimize a function of MSE
+  - highly interpretable
+  - *Use Case*: signal filtering, use the model variance to identify measured noise, so that underlying true signal(y) could be recovered by y_hat
+- **![beta-equation](https://latex.codecogs.com/svg.image?\widehat{\beta}&space;=&space;(X^TX)^{-1}X^Ty)**
+  - 2 requirements for (X^TX)^-1 to have unique inverse
+    - full rank = no predictor can be determined from a combination of one or more of other predictors
+    - the number of observations larger than the number of predictors
+    - IF VIOLATED: conditional inverse can still be attained, but the result is not unique, hence interpretablity stained 
+  - **Collinearity**
+    - Impact
+      - standard errors inflated
+      - predictive power remained, but significance of predictors drop (Type II Error)
+    - How to spot?
+      - [VIF(variance inflation factor)](https://corporatefinanceinstitute.com/resources/knowledge/other/variance-inflation-factor-vif/): to assess the correlation
+        - ![VIF](https://bkimg.cdn.bcebos.com/formula/968f7dc8a3c034e958093bfd587fc161.svg) 
+        - R_i^2 is represents the unadjusted coefficient of determination for regressing the ith independent variable on the remaining ones
+      - not significant respective T-tests, high R^2 
+    - How to correct?
+      - Delete correlated predictors
+      - PCA, PLS(simultaneouos dimension reduction and regression), Lasso, Ridge
+      - Situations that multicollinearity doesn't matter: a. dummy variable; b. control variable(as opposed of variable of interest); c. intersection or power
+    
+
 
 ## C7 Nonlinear Regression Models
 
