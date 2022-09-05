@@ -5,6 +5,14 @@
   - Informative Missing
   - KNN models
   - MICE
+- Smoothing
+  - [LOESS(Locally Estimated Scatterplot Smoothing)](https://towardsdatascience.com/loess-373d43b03564)
+    - Point-wise estimation, similar to KNN, using Tri-cubic as distance/weight function, k(window) should be manually selected, regression built for every point
+    - However, LOESS could also be used to investigate if the predictor and response has a linear relationship(Figure 6.3, p105)
+  - Spline: [Scipy implementation](https://docs.scipy.org/doc/scipy/tutorial/interpolate.html)
+    - Piecewise: itself is a continuous function, with its n-1 derivative continuous through all the knots, e.g. cubic splines has a continuous first and second derivative.
+  - [*Difference between LOESS and Spline*](https://stats.stackexchange.com/a/20107)
+
 - Whether to Delete
   - Degradate Matrix(single or rare values)
 - Adding 
