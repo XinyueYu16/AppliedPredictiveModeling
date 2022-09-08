@@ -13,6 +13,12 @@
     - Piecewise: itself is a continuous function, with its n-1 derivative continuous through all the knots, e.g. cubic splines has a continuous first and second derivative.
   - [*Difference between LOESS and Spline*](https://stats.stackexchange.com/a/20107)
 
+- [Tranformation](https://github.com/XinyueYu16/Machine_Learning/blob/master/LearningNotes/Methodology_DataPreparation/dimensionless.md)
+  - Same magnitude -> normalization -> min-max scaling -> accelerate coercion
+  - Same standard variance -> standardization -> PCA/distance calculating
+  - Skewness -> log/inverse/Box-Cox (only for positive values) (can also apply to predictors)
+  - Outliers/Vector Product -> regularization -> scale being 1
+
 - Whether to Delete
   - Degradate Matrix(single or rare values)
 - Adding 
