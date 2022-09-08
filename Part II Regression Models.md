@@ -26,6 +26,7 @@
   - additive
   - generally trys to minimize a function of MSE
   - highly interpretable
+  - Based on standard assumptions, it provides, with unbiased coefficient, the lowest MSE (which could be lowered by creating )
   - *Use Case*: signal filtering, use the model variance to identify measured noise, so that underlying true signal(y) could be recovered by y_hat
 - **![beta-equation](https://latex.codecogs.com/svg.image?\widehat{\beta}&space;=&space;(X^TX)^{-1}X^Ty)**
   - 2 requirements for ![](https://latex.codecogs.com/svg.image?(X^TX)^{-1}) to have unique inverse
@@ -34,7 +35,7 @@
     - IF VIOLATED: conditional inverse can still be attained, but the result is not unique, hence interpretablity stained 
   - **Collinearity**
     - Impact
-      - standard errors inflated
+      - standard errors & coefficients inflated
       - predictive power remained, but significance of predictors drop (Type II Error)
     - How to spot?
       - [VIF(variance inflation factor)](https://corporatefinanceinstitute.com/resources/knowledge/other/variance-inflation-factor-vif/): to assess the correlation
@@ -51,16 +52,24 @@
   - [Assumptions](https://towardsdatascience.com/assumptions-of-linear-regression-fdb71ebeaa8b)
     - a. linear; b. nocollinearity; c. normal errors; d. errors independent of independent IVs(correctly specified model); e. errors constant along DV(homoscedacity == independent observations == no group, no autocorrelation)
   - Drawback: a. only for linear; b. sensitive to outliers (bc they are minimizing SSE)
+    - Robust Regression : use *alternatives to SSE* to address the tendency towards outliers
+      - Hubert function: Given certain threshold C: when residuals < C, use squared residuals; when >= C, use absolute residual
 ### Partial Least Squares
 - Meaning
   - Similar to PCA, denotes a linear combination of predictors based on their variability
   - Moreover, the combination also *have maximum correlation with the response* (focuses on *covariance* rather than *variance*)
   - A supervised dimension reduction procedure, as opposed to PCA being unsupervised
   - Can deal with *multivariate outcome*
-- Disadvantage
+- Drawbacks
   - Cannot deal with too many predictors (Penalty Models still would be more efficient in this scope)
+  - Cannot deal with unlinear relationship with ease (Tree and other models recommended)
+  - Slow computation, *every* component needs to calculate a new IV and DV matrix
 - Resources
   - [Full Read](https://towardsdatascience.com/partial-least-squares-f4e6714452a)
+### Penalty Models
+- Ridge(*shrinking* model, L2, penalty = ![](https://latex.codecogs.com/svg.image?\lambda&space;\sum_{p}^{j=1}\beta&space;_j^2))
+- Lasso(*least absolute shrinkage and selection operation* model, L1, penalty = ![](https://latex.codecogs.com/svg.image?\lambda&space;\sum_{p}^{j=1}|\beta&space;_j|))
+- Elastic Net
 
 ## C7 Nonlinear Regression Models
 
