@@ -50,7 +50,10 @@
       - Situations that multicollinearity doesn't matter: a. dummy variable; b. control variable(as opposed of variable of interest); c. intersection or power
   - Drawback: a. only for linear; b. sensitive to outliers (bc they are minimizing SSE)
 ### Partial Least Squares
-
+- Meaning
+  - Similar to PCA, denotes a linear combination of predictors based on their variability
+  - Moreover, the combination also *have maximum correlation with the response*
+  - A supervised dimension reduction procedure, as opposed to PCA being unsupervised
 
 ## C7 Nonlinear Regression Models
 
