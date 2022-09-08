@@ -70,4 +70,5 @@
 - Ridge(*shrinking* model, L2, penalty = ![](https://latex.codecogs.com/svg.image?\lambda&space;\sum_{p}^{j=1}\beta&space;_j^2))
 - Lasso(*least absolute shrinkage and selection operation* model, L1, penalty = ![](https://latex.codecogs.com/svg.image?\lambda&space;\sum_{p}^{j=1}|\beta&space;_j|))
 - Elastic Net
+- Notice: Since penalty term uses coefficients, requiring the scale of predictors to be constant, hence pre-scaling is important
 
