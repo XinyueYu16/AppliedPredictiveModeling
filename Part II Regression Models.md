@@ -1,4 +1,4 @@
-# Part II Regression Models
+# Part II Regression Models (Linear)
 
 ## C5 Measuring Performace in Regression Models
 - Principle:
@@ -71,8 +71,3 @@
 - Lasso(*least absolute shrinkage and selection operation* model, L1, penalty = ![](https://latex.codecogs.com/svg.image?\lambda&space;\sum_{p}^{j=1}|\beta&space;_j|))
 - Elastic Net
 
-## C7 Nonlinear Regression Models
-
-## C8 Regression Trees and Rule-Based Models
-
-## C9 A Summary of Solubility Models
