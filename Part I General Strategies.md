@@ -25,8 +25,8 @@
 # I. 4 Over-fitting and Model Tuning
 ## - Methods to tune models
 - GirdSearch (Manually pick set of candidates + search optimal)
-- **Automatic Search**: [Genetic Algorithm](https://algoritmaonline.com/optimization-with-genetic-algorithm/#:~:text=Genetic%20Algorithm%20is%20an%20optimization%20algorithm%20that%20use,2%20main%20principles%3A%20natural%20selection%20and%20random%20mutation.) (mimicking the natrual selection)
-  - (PS. the example for Machine Learnin used an interesting module featuring recipe, juice, bake, whose name is *tidymodels*, similar to *sklearn.pipeline*)
+- **Automatic Search**: [Genetic Algorithm](https://algoritmaonline.com/optimization-with-genetic-algorithm/#:~:text=Genetic%20Algorithm%20is%20an%20optimization%20algorithm%20that%20use,2%20main%20principles%3A%20natural%20selection%20and%20random%20mutation.) (mimicking the natrual selection), [Medium Full Read](https://medium.com/towards-data-science/genetic-algorithms-in-python-using-the-deap-library-e67f7ce4024c)
+  - (PS. the example for Machine Learning used an interesting module featuring recipe, juice, bake, whose name is *tidymodels*, similar to *sklearn.pipeline*)
   - Process
     - Binary coding the gene(initial set of candidates), start iterations:
       - Calculate and select best 2 of gene as parent solutions
