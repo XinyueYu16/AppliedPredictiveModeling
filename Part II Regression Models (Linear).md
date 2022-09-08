@@ -62,7 +62,7 @@
   - Can deal with *multivariate outcome*
 - Drawbacks
   - Cannot deal with too many predictors (Penalty Models still would be more efficient in this scope)
-  - Cannot deal with unlinear relationship with ease (Tree and other models recommended)
+  - Cannot deal with nonlinear relationship with ease (Tree and other models recommended)
   - Slow computation, *every* component needs to calculate a new IV and DV matrix
 - Resources
   - [Full Read](https://towardsdatascience.com/partial-least-squares-f4e6714452a)
