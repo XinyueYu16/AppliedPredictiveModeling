@@ -40,7 +40,7 @@
       - [VIF(variance inflation factor)](https://corporatefinanceinstitute.com/resources/knowledge/other/variance-inflation-factor-vif/): to assess the correlation
         - ![VIF](https://latex.codecogs.com/svg.image?VIF&space;=&space;\frac{1}{(1-R_i^2)}) 
         - ![](https://latex.codecogs.com/svg.image?R_i^2) is represents the unadjusted coefficient of determination for regressing the ith independent variable on the remaining ones
-      - not significant respective T-tests, high R^2 
+      - not significant respective T-tests, high R^2
     - How to correct?
       - Delete correlated predictors(p47) to ensure all pairwise correlations are below a certain threshold
         - Find the highest correlation (between A and B)
@@ -48,12 +48,19 @@
         - loop until no pairwise correlation is above threshold
       - PCA, PLS(simultaneouos dimension reduction and regression), Lasso, Ridge
       - Situations that multicollinearity doesn't matter: a. dummy variable; b. control variable(as opposed of variable of interest); c. intersection or power
+  - [Assumptions](https://towardsdatascience.com/assumptions-of-linear-regression-fdb71ebeaa8b)
+    - a. linear; b. nocollinearity; c. normal errors; d. errors independent of independent IVs(correctly specified model); e. errors constant along DV(homoscedacity == independent observations == no group, no autocorrelation)
   - Drawback: a. only for linear; b. sensitive to outliers (bc they are minimizing SSE)
 ### Partial Least Squares
 - Meaning
   - Similar to PCA, denotes a linear combination of predictors based on their variability
-  - Moreover, the combination also *have maximum correlation with the response*
+  - Moreover, the combination also *have maximum correlation with the response* (focuses on *covariance* rather than *variance*)
   - A supervised dimension reduction procedure, as opposed to PCA being unsupervised
+  - Can deal with *multivariate outcome*
+- Disadvantage
+  - Cannot deal with too many predictors (Penalty Models still would be more efficient in this scope)
+- Resources
+  - [Full Read](https://towardsdatascience.com/partial-least-squares-f4e6714452a)
 
 ## C7 Nonlinear Regression Models
 
