@@ -34,9 +34,20 @@
 - Disadvantages
   - Prone to outliers
 
-### Support Vector Machines
+### [Support Vector Regression](https://towardsdatascience.com/an-introduction-to-support-vector-regression-svr-a3ebc1672c2)
 - Meaning
+  - Developed form SVM Classfication, nevertheless:
+    - SVM: to maximize the shortest distances between datapoints and hyperplane (to better devide)
+    - SVR: to minimize the longest distances from distances to hyperlane (to better include as many datapoints in the given epsilon tube with the smallest candidate ||w||^2)
+  - Ignoreing all the datapoints' residuals which are within epsilon, for datapoints out of *the tube*, use its linear form
+  - Loss Function
+    - Target: ![](https://latex.codecogs.com/svg.image?min(\frac{1}{2}||w||^2&space;&plus;&space;C\sum_{i=1}^{n}|\xi&space;_i|))
+    - Constraint: ![](https://latex.codecogs.com/svg.image?|y&space;-&space;\widehat{y}|&space;\leq&space;&space;\epsilon&space;&plus;&space;|\xi&space;_i|)
+  - ref
+    - [CN](https://blog.csdn.net/weixin_41940690/article/details/106639347?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106639347-blog-124145254.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106639347-blog-124145254.pc_relevant_aa&utm_relevant_index=2)
 - Advantages
+  - Handy when detecting anomaly (outside the tube)
+  - 
 - Disadvantages
 
 ## C8 Regression Trees and Rule-Based Models
