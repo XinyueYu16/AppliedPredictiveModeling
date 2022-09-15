@@ -34,7 +34,7 @@
 - Disadvantages
   - Prone to outliers
 
-### [Support Vector Regression](https://towardsdatascience.com/an-introduction-to-support-vector-regression-svr-a3ebc1672c2)
+### Support Vector Regression
 - Meaning
 
   ![](https://latex.codecogs.com/svg.image?f(\textbf{u})&space;=&space;\beta_0&space;&plus;&space;\sum_{i=1}^{n}\alpha_iK(\textbf{x}_i,&space;\textbf{u}))
