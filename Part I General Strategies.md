@@ -60,6 +60,7 @@
     - small k (2 or 3) comes with hign variances (typically larger than other methods), if k large (10 is often enough, mostly better than LOOCV in light of computational complexity), the true value can be discovered.
     - small k (2 or 3) has the same level of bias as bootstrap
     - *GCV estimation for linear regression's LOOCV*: models with same MSE but different degrees of freedom would have different GCV, less complex, higher
+      - ![](https://latex.codecogs.com/svg.image?GCV&space;=&space;\frac{1}{n}\sum_{n}^{i=1}\left&space;(&space;\frac{y_i-\widehat{y_i}}{1-df/n}&space;\right&space;)^{2})
 - Recommended Splitting
   - **Large Dataset**: simple 10-fold CV
   - **Small Dataset**: repeated 10-fold CV
