@@ -45,14 +45,21 @@
   - Developed from SVM Classfication, yet different
     - SVM: to maximize the shortest distances between datapoints and hyperplane (to better divide)
     - SVR: to minimize the longest distances from distances to hyperlane (to better include as many datapoints in the given epsilon tube with the smallest candidate ||w||^2)
-  - Kernal tricks
+  - Kernel tricks
     - make transformations based on all the a > 0 sample data 
-    - kernal generalization: polynomial, radial basis function, hyperbolic tangent
+    - kernal generalization: polynomial, **radial basis function**, hyperbolic tangent...
   - Loss Function
     - When calculating error: Ignoreing all the datapoints' residuals within given epsilon, however, for datapoints out of *the tube*, use its linear form
     - Target: ![](https://latex.codecogs.com/svg.image?min(\frac{1}{2}||w||^2&space;&plus;&space;C\sum_{i=1}^{n}|\xi&space;_i|))
       - Minimizing the coefficients and loss at the same time
     - Constraint: ![](https://latex.codecogs.com/svg.image?|y&space;-&space;\widehat{y}|&space;\leq&space;&space;\epsilon&space;&plus;&space;|\xi&space;_i|)
+- Tuning parameters
+  - epsilon
+  - cost
+  - kernel tricks' parameter
+  - best practice: fix epsilon, then tune other kernel parameters
+- Pre-processing
+  - centering and scaling (for residuals are affected by predictor scales)
 - Advantages
   - Handy when detecting anomaly (outside the tube)
   - Good at creating Hyperplanes among different datapoints (see the cow-and-wolf example)
