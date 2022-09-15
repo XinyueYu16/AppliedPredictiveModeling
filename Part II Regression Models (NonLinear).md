@@ -20,7 +20,24 @@
   - averaging: effective in producing stabler results
 
 ### Multivariate Adaptive Regression Splines(MARS)
+- Meaning
+  - Use hinge functions to create new features based on original predictors
+  - A basic formula would be like:
+    - ![](https://latex.codecogs.com/svg.image?\widehat{y_i}&space;=&space;\beta&space;_0&space;&plus;&space;\beta&space;_1(h(X-a))&space;&plus;&space;\beta&space;_2(h(a-X)))
+  - One term MARS is additive, they search for the cut point in every step with the optimizing objective of errors
+  - 2+ term MARS follows the same pattern, yet different features(hinge parts) could be multiplied together, though less robust than one-term MARS
+  - After adding all the features, pruning should be done based on how much the model is improved including this feature according to GCV estimation, pruning is stopped until reaching the number of retained terms
+- Advantages
+  - Automative feature selection: the estimation do not use all the predictors
+  - Interpretability: (p152) Every predictor's contribution could be splitted out
+  - Little pre-processing
+- Disadvantages
+  - Prone to outliers
 
+### Support Vector Machines
+- Meaning
+- Advantages
+- Disadvantages
 
 ## C8 Regression Trees and Rule-Based Models
 
