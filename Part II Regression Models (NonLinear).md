@@ -36,19 +36,32 @@
 
 ### [Support Vector Regression](https://towardsdatascience.com/an-introduction-to-support-vector-regression-svr-a3ebc1672c2)
 - Meaning
-  - Developed form SVM Classfication, nevertheless:
-    - SVM: to maximize the shortest distances between datapoints and hyperplane (to better devide)
+
+  ![](https://latex.codecogs.com/svg.image?f(\textbf{u})&space;=&space;\beta_0&space;&plus;&space;\sum_{i=1}^{n}\alpha_iK(\textbf{x}_i,&space;\textbf{u}))
+  
+  ![](https://latex.codecogs.com/svg.image?K(\textbf{x}_i,&space;\textbf{u})&space;=&space;\sum_{j=i}^{P}x_{ij}u_j&space;=&space;{\textbf{x}_i}'\textbf{u})
+  - Robust regression, epsilon-insensitive regression
+    - other methods: Huber
+  - Developed from SVM Classfication, yet different
+    - SVM: to maximize the shortest distances between datapoints and hyperplane (to better divide)
     - SVR: to minimize the longest distances from distances to hyperlane (to better include as many datapoints in the given epsilon tube with the smallest candidate ||w||^2)
-  - Ignoreing all the datapoints' residuals which are within epsilon, for datapoints out of *the tube*, use its linear form
+  - Kernal tricks
+    - make transformations based on all the a > 0 sample data 
+    - kernal generalization: polynomial, radial basis function, hyperbolic tangent
   - Loss Function
+    - When calculating error: Ignoreing all the datapoints' residuals within given epsilon, however, for datapoints out of *the tube*, use its linear form
     - Target: ![](https://latex.codecogs.com/svg.image?min(\frac{1}{2}||w||^2&space;&plus;&space;C\sum_{i=1}^{n}|\xi&space;_i|))
+      - Minimizing the coefficients and loss at the same time
     - Constraint: ![](https://latex.codecogs.com/svg.image?|y&space;-&space;\widehat{y}|&space;\leq&space;&space;\epsilon&space;&plus;&space;|\xi&space;_i|)
-  - ref
-    - [CN](https://blog.csdn.net/weixin_41940690/article/details/106639347?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106639347-blog-124145254.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106639347-blog-124145254.pc_relevant_aa&utm_relevant_index=2)
 - Advantages
   - Handy when detecting anomaly (outside the tube)
-  - 
+  - Good at creating Hyperplanes among different datapoints (see the cow-and-wolf example)
 - Disadvantages
+- Ref
+  - [CN](https://blog.csdn.net/weixin_41940690/article/details/106639347?spm=1001.2101.3001.6650.1&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106639347-blog-124145254.pc_relevant_aa&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-106639347-blog-124145254.pc_relevant_aa&utm_relevant_index=2)
+  - [EN](https://towardsdatascience.com/an-introduction-to-support-vector-regression-svr-a3ebc1672c2)
+  - [when to use-fencing the cows against the wolves](http://www.pybloggers.com/2017/01/why-use-svm/)
+
 
 ## C8 Regression Trees and Rule-Based Models
 
