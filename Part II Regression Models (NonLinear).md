@@ -75,7 +75,7 @@
 - Pruning: cost-complexity parameter
   - traditional: SSE_cp = SSE + ccp * number of terminal nodes
   -  [sklearn ccp](https://scikit-learn.org/stable/modules/tree.html#minimal-cost-complexity-pruning)
-    -  Use alpha_effective to determine whether to maintain certain node
+      -  Use alpha_effective to determine whether to maintain certain node
 
 
 ## C9 A Summary of Solubility Models
