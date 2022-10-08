@@ -75,7 +75,17 @@
 - Pruning: cost-complexity parameter
   - traditional: SSE_cp = SSE + ccp * number of terminal nodes
   -  [sklearn ccp](https://scikit-learn.org/stable/modules/tree.html#minimal-cost-complexity-pruning)
-      -  Use alpha_effective to determine whether to maintain certain node
+      -  Use alpha_effective to determine whether to maintain certain node, a non-terminal node with the smallest alpha_effective would be pruned if its alpha_effective smaller than the *ccp_alpha*
+        - **alpha_effective**: https://latex.codecogs.com/svg.image?\alpha_{eff}(t)=\frac{R(t)-R(T_t)}{|T|-1}
+        - R(t) is the impurity of node t, R(Tt) is the weighted sum of impurity of all t's sub-branches, T is the number pf sub-nodes
+- Feature Importance
+  - Appear higher/ more times
+- Advantage
+  - Can handle missing data
+    - cut at missing data would opt to use surrogate splits
+- Disadvantage
+  - Complex trees fit better, yet harder to interprete(due to many overlappings)
+  - When collinearity exists, splits may be random
 
 
 ## C9 A Summary of Solubility Models
