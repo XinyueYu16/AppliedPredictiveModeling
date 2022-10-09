@@ -76,7 +76,7 @@
   - traditional: SSE_cp = SSE + ccp * number of terminal nodes
   -  [sklearn ccp](https://scikit-learn.org/stable/modules/tree.html#minimal-cost-complexity-pruning)
       -  Use alpha_effective to determine whether to maintain certain node, a non-terminal node with the smallest alpha_effective would be pruned if its alpha_effective smaller than the *ccp_alpha*
-        - **alpha_effective**: https://latex.codecogs.com/svg.image?\alpha_{eff}(t)=\frac{R(t)-R(T_t)}{|T|-1}
+        - **alpha_effective**: ![](https://latex.codecogs.com/svg.image?\alpha_{eff}(t)=\frac{R(t)-R(T_t)}{|T|-1})
         - R(t) is the impurity of node t, R(Tt) is the weighted sum of impurity of all t's sub-branches, T is the number pf sub-nodes
 - Feature Importance
   - Appear higher/ more times
@@ -85,7 +85,35 @@
     - cut at missing data would opt to use surrogate splits
 - Disadvantage
   - Complex trees fit better, yet harder to interprete(due to many overlappings)
-  - When collinearity exists, splits may be random
+  - When collinearity exists, splits may be random; and the importance of features tend to be unstable
+    - i.e In linear regression, model wouldn't increase the coefficient of a certain feature to increase its performance; but a tree-model might: if the feature is the sole feature seen in data/the number of splits unlimited; **SO**, to underpin the importance of a certain feature, **ensemble methods or CV** should be considered
+  - Suffer **SELECTION BIAS**: favor features with higher variance/more distinct values
+    - features containing noise sometimes might get more spilts than truely informative ones, after pruning it might lead to no tree at all
+  - UNSTABLE (as stated above); performance poor in predicting unseen values
+- Adjustments(UNbiased trees) -- Statistical hypothesis does not entail high performance
+  - Common places: statistical hypothsis; no need to prune
+    - GUIDE model (generalized, unbiased, interaction detection and estimation): use statistical hypothesis to rank importanct features, then split
+    - Conditional Inference Trees: Use statistical hypothesis(p-value) to compare the differences between splitted sub-groups
 
-
+### Regression Model Trees
+- M5 (Quinlan 1992) (Similar to the model I deployed in house-price predictions) 
+  - Assumption
+    - "The functional dependency is not constant in the whole domain, but can be approximated as such on smaller subdomains"
+  - Steps
+    - **Splitting**: Different splitting criteria(SDR - standard deviation reduction)
+    - **Linear Modeling**: Terminal nodes predict the outcome using linear model (with features used in splitting before) as opposed to simple average
+    - **Pruning**: After each linear model is built, pruning is done leafmodel-wise, where adjusted error rate is emoployed to determine which *predictor* should be kept 
+    - **Smoothing**: Models in parent nodes would be updated (weighted sum) according to its branches, the equation be like:
+      ![](https://latex.codecogs.com/svg.image?PV(s)&space;=&space;\frac{n_i\times&space;Si&space;&plus;&space;c\times&space;PV(S)}{n_i&space;&plus;&space;c})
+      - This could have significant positive effect in performance when linear models across nodes are very different(either the traning sample is small or high collinearity exists)
+      - [python-M5P smoothing implementation](https://github.com/smarie/python-m5p/blob/main/src/m5py/main.py#L414)
+  - Advantage
+    - Address the fallacy of basic trees' poor predictions in extreme values
+    - **Low computation cost**
+      > "M5 model tree can simulate the phenomena with very high dimensionality up to hundreds of attributes [13]. This ability sets M5 apart from regression tree learners at the time (like MARS), whose computational cost grows very quickly when the number of features increases."
+  - Reference
+    - [A Thesis using M5 tree](https://www.un-ihe.org/sites/default/files/solomatinexuem5-model-trees-nn-huai-riverasce-j-hydrolengr2004.pdf)
+    - [Model Trees Repo](https://github.com/ankonzoid/LearningX/tree/master/advanced_ML/model_tree)
+    - [1992-Quinlan-AI](https://sci2s.ugr.es/keel/pdf/algorithm/congreso/1992-Quinlan-AI.pdf)
+    - 
 ## C9 A Summary of Solubility Models
