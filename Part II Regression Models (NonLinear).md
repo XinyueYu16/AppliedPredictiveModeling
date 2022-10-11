@@ -106,6 +106,7 @@
     - **Smoothing**: Models in parent nodes would be updated (weighted sum) according to its branches, the equation be like:
       ![](https://latex.codecogs.com/svg.image?PV(s)&space;=&space;\frac{n_i\times&space;Si&space;&plus;&space;c\times&space;PV(S)}{n_i&space;&plus;&space;c})
       - This could have significant positive effect in performance when linear models across nodes are very different(either the traning sample is small or high collinearity exists)
+        - When faced with high collinearity, smoothing could alleviate this while maintaining high performance. However, simply reducing these features would lead to performance drop
       - [python-M5P smoothing implementation](https://github.com/smarie/python-m5p/blob/main/src/m5py/main.py#L414)
   - Advantage
     - Address the fallacy of basic trees' poor predictions in extreme values
@@ -115,5 +116,6 @@
     - [A Thesis using M5 tree](https://www.un-ihe.org/sites/default/files/solomatinexuem5-model-trees-nn-huai-riverasce-j-hydrolengr2004.pdf)
     - [Model Trees Repo](https://github.com/ankonzoid/LearningX/tree/master/advanced_ML/model_tree)
     - [1992-Quinlan-AI](https://sci2s.ugr.es/keel/pdf/algorithm/congreso/1992-Quinlan-AI.pdf)
-    - 
+    
+### Rule-Based Trees
 ## C9 A Summary of Solubility Models
